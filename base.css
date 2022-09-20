@@ -1,0 +1,497 @@
+:root {
+    --gray-hs: 210, 10%;
+    --red-hs: 0, 100%;
+    --pink-hs: 339, 82%;
+    --grape-hs: 288, 75%;
+    --violet-hs: 255, 91%;
+    --indigo-hs: 228, 94%;
+    --blue-hs: 207, 86%;
+    --cyan-hs: 188, 72%;
+    --teal-hs: 162, 73%;
+    --green-hs: 130, 57%;
+    --lime-hs: 84, 69%;
+    --yellow-hs: 45, 97%;
+    --orange-hs: 29, 100%;
+
+    --font-sans: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+    --font-serif: ui-serif, serif;
+    --font-mono: monospace;
+
+    --display-1: calc(1.625rem + 4.5vw);
+    --display-2: calc(1.575rem + 3.9vw);
+    --display-3: calc(1.525rem + 3.3vw);
+    --display-4: calc(1.475rem + 2.7vw);
+    --fs-1: calc(1.375rem + 1.5vw);
+    --fs-2: calc(1.325rem + 0.9vw);
+    --fs-3: calc(1.3rem + 0.6vw);
+    --fs-4: calc(1.275rem + 0.3vw);
+
+    --bg-light: hsl(0, 0%, 98%);
+    --bg-dark: hsl(0, 0%, 18%);
+    --text-white: hsl(0, 0%, 95%);
+    --text-black: hsl(0, 0%, 25%);
+    --text-light: hsl(0, 0%, 85%);
+    --text-dark: hsl(0, 0%, 35%);
+}
+
+:root {
+    --accent-hs: var(--orange-hs);
+    --accent: hsl(var(--accent-hs), 65%);
+    --accent-light: hsl(var(--accent-hs), 75%);
+    --accent-dark: hsl(var(--accent-hs), 55%);
+
+    --surface-hs: var(--gray-hs);
+    --surface: hsl(var(--surface-hs), 100%);
+    --surface-1: hsl(var(--surface-hs), 98%);
+    --surface-2: hsl(var(--surface-hs), 96%);
+    --surface-3: hsl(var(--surface-hs), 94%);
+    --surface-4: hsl(var(--surface-hs), 92%);
+    --surface-5: hsl(var(--surface-hs), 90%);
+
+    --text-1: var(--text-black);
+    --text-2: var(--text-dark);
+    --text-3: hsl(0, 0%, 55%);
+    --text-4: hsl(0, 0%, 75%);
+
+    --scrollbar-track: var(--surface-2);
+    --scrollbar-thumb: var(--surface-5);
+
+    --body-bg: hsl(0, 0%, 100%);
+
+    --body-font: normal normal 1rem var(--font-sans);
+    --heading-font: normal 900 var(--fs-1) var(--font-sans);
+    --shadow: 0 .5rem 1.25rem hsla(0, 0%, 15%, 0.06);
+}
+
+@media (prefers-color-scheme: dark) {}
+
+:root[data-theme="dark"] {
+    --surface: hsl(0, 0%, 16%);
+    --surface-1: hsl(0, 0%, 18%);
+    --surface-2: hsl(0, 0%, 20%);
+    --surface-3: hsl(0, 0%, 22%);
+    --surface-4: hsl(0, 0%, 24%);
+    --surface-5: hsl(0, 0%, 26%);
+
+    --text-1: var(--text-white);
+    --text-2: var(--text-light);
+    --text-3: hsl(0, 0%, 65%);
+    --text-4: hsl(0, 0%, 45%);
+
+    --body-bg: hsl(0, 0%, 15%);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 0.65rem;
+    height: 0.5rem;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 0.5rem;
+    background-color: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 0.5rem;
+    background-color: var(--scrollbar-thumb);
+}
+
+* {
+    margin: 0;
+    border-style: solid;
+    border-width: 0;
+    outline: none;
+    word-break: break-word;
+}
+
+html {
+    scroll-behavior: auto;
+}
+
+html,
+body {
+    overflow-x: clip;
+    width: 100%;
+    min-height: 100vh;
+}
+
+body {
+    accent-color: var(--accent);
+    caret-color: var(--accent);
+    background-color: var(--body-bg);
+    font: var(--body-font);
+    color: var(--text-2);
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+    overscroll-behavior-y: contain;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: block !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-1);
+    font: var(--heading-font);
+    line-height: 1.25;
+    margin-bottom: 0;
+}
+
+dt {
+    color: var(--text-1);
+}
+
+a {
+    color: inherit;
+    transition: text-decoration-color 0.3s, color 0.3s;
+    text-decoration-color: transparent;
+}
+
+a:hover {
+    text-decoration-color: var(--accent);
+}
+
+h1 {
+    font-size: var(--fs-1);
+    max-width: 20ch;
+}
+
+h2 {
+    font-size: var(--fs-2);
+    max-width: 25ch;
+}
+
+h3 {
+    font-size: var(--fs-3);
+}
+
+h4 {
+    font-size: var(--fs-4);
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+h6 {
+    font-size: 1.1rem;
+}
+
+h3,
+h4,
+h5,
+h6,
+dt {
+    max-width: 35ch;
+}
+
+a,
+u,
+ins,
+abbr {
+    text-underline-offset: 1px;
+}
+
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea {
+    cursor: pointer;
+    word-break: normal;
+}
+
+label+ ::-webkit-input-placeholder {
+    color: var(--text-4);
+}
+
+label+ :-ms-input-placeholder {
+    color: var(--text-4);
+}
+
+label+ ::placeholder {
+    color: var(--text-4);
+}
+
+sub {
+    white-space: nowrap;
+    vertical-align: text-top;
+}
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+    vertical-align: middle;
+}
+
+img {
+    object-fit: cover;
+}
+
+img,
+svg,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+iframe {
+    border: 0;
+    background-color: transparent;
+}
+
+input,
+button,
+textarea,
+select,
+input[type="file"]::-webkit-file-upload-button {
+    color: inherit;
+    font: inherit;
+    letter-spacing: inherit;
+}
+
+textarea {
+    resize: vertical;
+}
+
+select,
+textarea,
+input[type="tel"],
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="number"],
+input[type="password"] {
+    width: 100%;
+    background: var(--surface-1);
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--surface-4);
+    font-size: 1rem;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    width: 1rem;
+}
+
+svg:not([fill]) {
+    stroke: currentColor;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+svg * {
+    pointer-events: none;
+}
+
+code,
+kbd,
+samp,
+pre {
+    font-family: var(--font-mono);
+}
+
+pre {
+    white-space: pre;
+    overflow: auto;
+    font-size: 1rem;
+    padding: 2rem;
+    background-color: var(--surface-1);
+    border-radius: 0.375rem;
+}
+
+pre>code {
+    overflow: auto;
+    display: block;
+    max-width: 100%;
+    padding-bottom: 0.5rem;
+}
+
+:not(pre)>code {
+    background-color: var(--surface-2);
+    border-radius: 0.375rem;
+    padding: 0.25rem 0.5rem;
+}
+
+kbd,
+var {
+    border-color: var(--surface-4);
+    border-radius: 0.375rem;
+    border-width: 1px;
+    padding: 0.25rem 0.5rem;
+}
+
+mark,
+del,
+ins {
+    border-radius: 0.375rem;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    color: #343a40;
+    font-weight: 300;
+}
+
+mark {
+    background-color: hsl(var(--orange-hs), 90%);
+}
+
+del {
+    background-color: hsl(var(--red-hs), 90%);
+}
+
+ins {
+    background-color: hsl(var(--green-hs) 90%);
+}
+
+ol,
+ul {
+    list-style: none;
+    padding-inline-start: 0;
+    margin-bottom: 0;
+}
+
+li,
+dd,
+figcaption {
+    max-width: 45ch;
+}
+
+p {
+    max-width: 60ch;
+    margin-bottom: 0;
+}
+
+dt,
+summary {
+    font-weight: 700;
+}
+
+dt {
+    margin-inline-start: 1.5rem;
+}
+
+.small,
+small {
+    font-size: 0.85rem;
+    max-width: 20ch;
+}
+
+hr {
+    background-color: var(--surface-3);
+    height: 2px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+figure {
+    display: grid;
+    gap: 0.5rem;
+    place-items: center;
+}
+
+figure>figcaption {
+    font-size: 1rem;
+}
+
+blockquote {
+    border-left: 5px solid var(--accent);
+    border-top-left-radius: 0.3rem;
+    border-bottom-left-radius: 0.3rem;
+}
+
+blockquote:before {
+    content: "\201c";
+    color: var(--accent);
+    font-family: serif;
+    font-weight: 900;
+    line-height: 0;
+    font-size: 5rem;
+    margin-inline-end: 0.5rem;
+    margin-inline-start: -0.5rem;
+    vertical-align: middle;
+}
+
+blockquote {
+    max-width: 45ch;
+    padding: 1rem 1.25rem;
+}
+
+summary {
+    background-color: var(--surface-3);
+    border-radius: 0.375rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+details {
+    background-color: var(--surface-2);
+    border-radius: 0.375rem;
+    padding: 1rem 1.25rem;
+}
+
+details[open]>summary {
+    border-end-end-radius: 0;
+    border-end-start-radius: 0;
+    margin-bottom: 0.5rem;
+}
+
+fieldset {
+    border-radius: 0.375rem;
+}
+
+abbr {
+    text-decoration-color: hsl(var(--blue-hs), 75%);
+}
+
+br {
+    content: "";
+    display: block;
+}
+
+table {
+    font-size: 1rem;
+    border-spacing: 0;
+    border-collapse: collapse;
+    border: 1px solid var(--surface-5);
+}
+
+th {
+    text-align: start;
+}
+
+th,
+td {
+    border-bottom: 1px solid var(--surface-5);
+    padding: 0.5rem 1rem;
+    word-break: normal;
+}
+
+*+th,
+*+td {
+    border-inline-start: 1px solid var(--surface-5);
+}
+
+tbody tr:last-of-type>* {
+    border-bottom: 0;
+}
