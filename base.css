@@ -79,6 +79,10 @@
     --text-4: hsl(0, 0%, 45%);
 
     --body-bg: hsl(0, 0%, 15%);
+
+    --accent: hsl(var(--accent-hs), 45%);
+    --accent-light: hsl(var(--accent-hs), 35%);
+    --accent-dark: hsl(var(--accent-hs), 55%);
 }
 
 *,
