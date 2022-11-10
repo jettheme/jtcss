@@ -36,9 +36,9 @@
 
 :root {
     --accent-hs: var(--orange-hs);
-    --accent: hsl(var(--accent-hs), 65%);
-    --accent-light: hsl(var(--accent-hs), 75%);
-    --accent-dark: hsl(var(--accent-hs), 55%);
+    --accent: hsl(var(--accent-hs), 62%);
+    --accent-light: hsl(var(--accent-hs), 72%);
+    --accent-dark: hsl(var(--accent-hs), 52%);
 
     --surface-hs: var(--gray-hs);
     --surface: hsl(var(--surface-hs), 100%);
@@ -80,9 +80,9 @@
 
     --body-bg: hsl(0, 0%, 15%);
 
-    --accent: hsl(var(--accent-hs), 45%);
-    --accent-light: hsl(var(--accent-hs), 35%);
-    --accent-dark: hsl(var(--accent-hs), 55%);
+    --accent: hsl(var(--accent-hs), 52%);
+    --accent-light: hsl(var(--accent-hs), 42%);
+    --accent-dark: hsl(var(--accent-hs), 62%);
 }
 
 *,
@@ -317,18 +317,20 @@ pre {
 
 pre {
     white-space: pre;
-    overflow: auto;
+    overflow-x: auto;
     font-size: 1rem;
     padding: 2rem;
     background-color: var(--surface-1);
     border-radius: 0.375rem;
+    position: relative;
 }
 
 pre>code {
-    overflow: auto;
+    overflow-x: auto;
     display: block;
-    max-width: 100%;
-    padding-bottom: 0.5rem;
+    margin-left: -2rem;
+    padding: 0 2rem 0.5rem;
+    margin-right: -2rem;
 }
 
 :not(pre)>code {
